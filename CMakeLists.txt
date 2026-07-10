@@ -22,4 +22,5 @@ target_link_libraries(
     run_tests
     PRIVATE
     test_ring_buffer
+    test_timing_wheel
 )
