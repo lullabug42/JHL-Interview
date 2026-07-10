@@ -8,3 +8,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_subdirectory(ring_buffer)
 add_subdirectory(timing_wheel)
 add_subdirectory(order_book)
+
+# tests
+add_subdirectory(tests)
+
+add_executable(run_tests)
+target_sources(
+    run_tests
+    PRIVATE
+    run_tests.cpp
+)
+target_link_libraries(
+    run_tests
+    PRIVATE
+    test_ring_buffer
+)
