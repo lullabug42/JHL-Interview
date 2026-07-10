@@ -79,8 +79,8 @@ void RunOrderBookTests() {
           "VWAP ASK 2\n"
           "VWAP BID 2\n"
           "VWAP ASK 3\n",
-          "VWAP(ASK, 2) = 10.75\n"
-          "VWAP(BID, 2) = 8.25\n"
+          "VWAP(ASK, 2) = 10.7500\n"
+          "VWAP(BID, 2) = 8.2500\n"
           "VWAP(ASK, 3) = N/A\n",
       },
       {
@@ -168,8 +168,8 @@ void RunOrderBookTests() {
           "VWAP BID 1\n"
           "VWAP ASK 1\n"
           "PRINT\n",
-          "VWAP(BID, 1) = 0.00\n"
-          "VWAP(ASK, 1) = 0.01\n"
+          "VWAP(BID, 1) = 0.0000\n"
+          "VWAP(ASK, 1) = 0.0100\n"
           "ASK:\n"
           "  0.01 50 [1 orders]\n"
           "\n"
@@ -206,10 +206,10 @@ void RunOrderBookTests() {
           "VWAP BID 1\n"
           "VWAP ASK 2\n"
           "VWAP BID 2\n",
-          "VWAP(ASK, 1) = 10.00\n"
-          "VWAP(BID, 1) = 9.00\n"
-          "VWAP(ASK, 2) = 10.50\n"
-          "VWAP(BID, 2) = 8.50\n",
+          "VWAP(ASK, 1) = 10.0000\n"
+          "VWAP(BID, 1) = 9.0000\n"
+          "VWAP(ASK, 2) = 10.5000\n"
+          "VWAP(BID, 2) = 8.5000\n",
       },
       {
           "VWAP ASK 1\n"
