@@ -51,5 +51,6 @@ private:
 };
 
 void handleCommands(const std::string &commands, OrderBook &order_book);
+void handleInput(OrderBook &order_book);
 
 } // namespace order_book

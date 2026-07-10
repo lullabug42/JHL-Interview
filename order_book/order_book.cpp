@@ -66,6 +66,16 @@ bool parsePriceCents(const std::string &token, uint64_t &price_cents) {
   return true;
 }
 
+bool isExitCommand(const std::string &command) {
+  std::istringstream input(command);
+  std::string command_type;
+  if (!(input >> command_type) || command_type != "EXIT") {
+    return false;
+  }
+
+  return !hasExtraToken(input);
+}
+
 void handleCommandLine(const std::string &command, OrderBook &order_book) {
   std::istringstream input(command);
   std::string command_type;
@@ -260,6 +270,17 @@ void handleCommands(const std::string &commands, OrderBook &order_book) {
   std::string command;
   while (std::getline(input, command)) {
     handleCommandLine(command, order_book);
+  }
+}
+
+void handleInput(OrderBook &order_book) {
+  std::string command;
+  while (std::getline(std::cin, command)) {
+    if (isExitCommand(command)) {
+      break;
+    }
+
+    handleCommands(command, order_book);
   }
 }
 

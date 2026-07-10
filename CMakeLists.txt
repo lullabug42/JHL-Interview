@@ -25,3 +25,17 @@ target_link_libraries(
     test_timing_wheel
     test_order_book
 )
+
+# order_book
+add_executable(run_order_book)
+
+target_sources(
+    run_order_book
+    PRIVATE
+    run_order_book.cpp
+)
+target_link_libraries(
+    run_order_book
+    PRIVATE
+    order_book
+)
