@@ -7,3 +7,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(ring_buffer)
 add_subdirectory(timing_wheel)
+add_subdirectory(order_book)
