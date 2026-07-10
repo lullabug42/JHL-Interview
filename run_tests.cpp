@@ -1,4 +1,5 @@
 #include "test_ring_buffer.h"
+#include "test_order_book.h"
 #include "test_timing_wheel.h"
 #include <iostream>
 
@@ -13,5 +14,9 @@ int main() {
   cout << "================     Timing wheel tests start    ==================" << endl;
   timing_wheel::RunTimingWheelTests();
   cout << "================     Timing wheel tests end      ==================" << endl;
+
+  cout << "================     Order book tests start      ==================" << endl;
+  order_book::RunOrderBookTests();
+  cout << "================     Order book tests end        ==================" << endl;
   return 0;
 }

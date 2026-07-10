@@ -23,4 +23,5 @@ target_link_libraries(
     PRIVATE
     test_ring_buffer
     test_timing_wheel
+    test_order_book
 )

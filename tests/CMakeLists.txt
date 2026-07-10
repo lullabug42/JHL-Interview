@@ -51,3 +51,30 @@ target_link_libraries(
     PRIVATE
     timing_wheel
 )
+
+# order_book
+add_library(test_order_book STATIC)
+
+target_include_directories(
+    test_order_book
+    PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+target_include_directories(
+    test_order_book
+    PRIVATE
+    ${CMAKE_SOURCE_DIR}/order_book
+)
+
+target_sources(
+    test_order_book
+    PRIVATE
+    test_order_book.cpp
+)
+
+target_link_libraries(
+    test_order_book
+    PRIVATE
+    order_book
+)
