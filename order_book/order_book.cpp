@@ -12,9 +12,9 @@ namespace order_book {
 
 namespace {
 
-std::string formatYuan(long double price_cents) {
+std::string formatYuan(long double price_cents, int precision) {
   std::ostringstream out;
-  out << std::fixed << std::setprecision(2) << price_cents / 100.0L;
+  out << std::fixed << std::setprecision(precision) << price_cents / 100.0L;
   return out.str();
 }
 
@@ -207,14 +207,14 @@ void OrderBook::cancelOrder(uint64_t order_id) {
 void OrderBook::printOrderBook() const {
   std::cout << "ASK:\n";
   for (const auto &[price, level] : asks_) {
-    std::cout << "  " << formatYuan(price) << ' ' << level.total_quantity << " ["
-              << level.order_count << " orders]\n";
+    std::cout << "  " << formatYuan(price, 2) << ' ' << level.total_quantity
+              << " [" << level.order_count << " orders]\n";
   }
 
   std::cout << "\nBID:\n";
   for (const auto &[price, level] : bids_) {
-    std::cout << "  " << formatYuan(price) << ' ' << level.total_quantity << " ["
-              << level.order_count << " orders]\n";
+    std::cout << "  " << formatYuan(price, 2) << ' ' << level.total_quantity
+              << " [" << level.order_count << " orders]\n";
   }
 }
 
@@ -252,7 +252,7 @@ void OrderBook::vwap(Side side, uint64_t depth) const {
     return;
   }
 
-  std::cout << formatYuan(weighted_sum / total_quantity) << '\n';
+  std::cout << formatYuan(weighted_sum / total_quantity, 4) << '\n';
 }
 
 void handleCommands(const std::string &commands, OrderBook &order_book) {
