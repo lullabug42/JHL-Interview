@@ -29,6 +29,10 @@ void RunRingBufferTests() {
 
   // 4. 快照
   auto snap = buf.snapshot(); // [20, 30, 40] 从旧到新
+  assert(snap.size() == 3);
+  assert(snap[0] == 20);
+  assert(snap[1] == 30);
+  assert(snap[2] == 40);
 
   // 5. 清空
   buf.clear();
